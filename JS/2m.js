@@ -180,3 +180,92 @@ let obj = users.reduce((acc, user) => {acc[user.id] = user.name;
 
 console.log(obj);
 
+// Check if variable is undefined. 
+
+let a = 8; 
+
+console.log(a === undefined)
+
+// Check if variable is null.
+ a = null; 
+
+console.log(a === null)
+
+
+// Print all primitive types.
+let numberTy = 10 ;
+let bty = false;
+let cty = "string";
+let dty = null;
+let e = undefined;
+let f = Symbol(); 
+let g = BigInt(10);
+
+
+// Print all non-primitive types.
+let arr1 = [1, 4]
+let obj1 = { a: 1, b: 2 }
+let fn = function() { return 1; }
+let date = new Date();
+
+
+//Convert boolean to string. 
+let bool = true;
+console.log(String(bool)); // "true"
+console.log(bool.toString()); // "true"
+
+
+// Parse user input.
+// parseInt() converts a string into an integer number.
+let userInput = "123";
+ num = parseInt(userInput);
+console.log(num); // 123
+
+
+// Validate age input.
+let age = 18;
+if (age >= 18) {
+  console.log("You are an adult.");
+} else {
+  console.log("You are a minor.");
+}
+
+// Convert Fahrenheit to Celsius.
+
+let fahrenheit1 = 77;
+let celsius1 = (fahrenheit1 - 32) * 5/9;
+console.log(celsius1); // 25.0
+
+// 2. Create Immutable Object
+
+// An immutable object cannot be modified after creation.
+
+// Method 1: Object.freeze()
+
+const user = Object.freeze({
+  name: "John",
+  age: 25
+});
+
+user.age = 30;
+
+console.log(user.age); // 25
+
+
+
+// 3. Seal Object
+
+// Object.seal() allows updating existing properties but prevents adding or deleting properties.
+
+const user = {
+  name: "John",
+  age: 25
+};
+
+Object.seal(user);
+
+user.age = 30;      // Allowed
+user.city = "Bhopal"; // Not Allowed
+delete user.name;     // Not Allowed
+
+console.log(user);

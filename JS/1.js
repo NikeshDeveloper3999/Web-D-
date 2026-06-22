@@ -70,3 +70,4 @@ console.log(primitiveDataTypes);
 // Function
 
 // Technically JavaScript me almost sab non-primitive values objects hi hote hain (arrays aur functions bhi objects ke special types hain).
+

@@ -215,10 +215,14 @@ console.log(Object.keys(obj1).length);
 
  count = 0;
 
-for (let key in obj) {
+for (let key in obj1) {
   count++;
 }
 
 console.log(count);
+
+
+ // 
+
 
 

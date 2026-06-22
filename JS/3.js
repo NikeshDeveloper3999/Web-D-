@@ -124,3 +124,19 @@ console.log(1 == "1");
 // | `"" == 0`            | `true`  | `""` is converted to `0`, so `0 == 0`.                                      |
 // | `false == 0`         | `true`  | `false` is converted to `0`, so `0 == 0`.                                   |
 // | `[] == false`        | `true`  | `[]` becomes `""`, then `""` becomes `0`; `false` becomes `0`, so `0 == 0`. |
+
+
+console.log(  5*5*2); // Output: 15
+
+
+
+const obj = { 
+  valueOf() {
+    return 10;
+  }
+};
+console.log(obj + 5);
+
+
+
+
