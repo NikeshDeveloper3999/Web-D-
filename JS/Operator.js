@@ -165,5 +165,144 @@ console.log(findFalsyValues(arr3));
 
 
 // Implement custom comparison function.
+  let customComparison = (a, b) => {
+    if (a === b) {
+      return 'Equal';
+    } else if (a > b) {
+      return 'Greater';
+    } else {
+      return 'Smaller';
+    }
+  };
 
+// Check character is vowel/consonant.
+var isVowel = (char) => {
+  return 'aeiouAEIOU'.includes(char);
+};
+
+var isConsonant = (char) => {
+  return 'bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ'.includes(char);
+};
+
+// Check alphabet or digit.
+
+var isAlphabet = (char) => {
+  return 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.includes(char);
+};
+
+
+var isDigit = (char) => {
+  return '0123456789'.includes(char);
+};
+
+
+// Check uppercase/lowercase.
+
+// any other solution for isLowercase
+var isUppercase = (char) => {
+  return 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.includes(char);
+};
+
+var isLowercase = (char) => {
+  return char >= 'a' && char <= 'z';
+};
+
+var isLowercase = (char) => {
+  return 'abcdefghijklmnopqrstuvwxyz'.includes(char);
+};
+
+isVowel('6'); // true 
+
+
+// What does the includes() method do? It checks if a string contains a specified value and returns true if it does, otherwise false.
+// // The includes() method works on strings and arrays. It checks if a string contains a specified value and returns true if it does, otherwise false.
+// give me a example of array with includes 
+// let arr4 = [1, 2, 3, 4, 5];
+// console.log(arr4.includes(3)); // true
+
+
+
+// Check weekday/weekend.
+let day = "Sunday";
+if (day === "Saturday" || day === "Sunday") {
+  console.log("Weekend");
+} else {
+  console.log("Weekday");
+}
+
+
+// Check temperature category.
+
+var temp = 30;
+
+if (temp < 0) {
+  console.log("Freezing weather");
+} else if (temp >= 0 && temp <= 10) {
+  console.log("Very cold weather");
+} else if (temp >= 11 && temp <= 20) {
+  console.log("Cold weather");
+} else if (temp >= 21 && temp <= 30) {
+  console.log("Normal temperature");
+} else if (temp >= 31 && temp <= 40) {
+  console.log("Hot weather");
+} else {
+  console.log("Very hot weather");
+}
+
+
+
+// Income tax calculator.
+
+let calculateIncomeTax = (income) => {
+  return income / 10;
+};
+
+console.log(calculateIncomeTax(10000));
+
+// Discount calculator.
+
+let calculateDiscount = (amount, discount) => amount *(discount / 100);
+console.log(calculateDiscount(10000, 10));
+
+// Login validation.
+
+
+let username = "user123";
+let password = "pass123";
+
+if (username === "user123" && password === "pass123") {
+  console.log("Login successful");
+} else {
+  console.log("Invalid username or password");
+}
+
+
+// Password strength checker.
+
+let password1 = "pass123";
+let regex =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*!]).{8,}$/;
+
+if (regex.test(password1)) {
+  console.log("Strong Password");
+} else {
+  console.log("Weak Password");
+}
+
+
+// BMI category.
+let calculateBMI = (weight, height) => {
+  let bmi = weight / (height * height);
+  if (bmi < 18.5) {
+    return "Underweight";
+  } else if (bmi >= 18.5 && bmi < 25) {
+    return "Normal weight";
+  } else if (bmi >= 25 && bmi < 30) {
+    return "Overweight";
+  } else {
+    return "Obesity";
+  }
+};
+
+
+// Insurance eligibility.
 
