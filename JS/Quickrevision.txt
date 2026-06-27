@@ -1,0 +1,59 @@
+✅ What is a loop?
+A structure that repeatedly executes code while a condition is true.
+
+✅ Types of loops?
+for, while, do-while, for-of, for-in.
+
+✅ for vs while?
+for → known iterations.
+while → unknown iterations.
+
+✅ while vs do-while?
+do-while executes at least once.
+
+✅ Infinite loop?
+A loop that never terminates.
+
+✅ Nested loop?
+A loop inside another loop.
+
+✅ Loop control statements?
+break and continue.
+
+✅ break vs continue?
+break exits the loop.
+continue skips the current iteration.
+
+✅ When avoid loops?
+When array methods (map, filter, reduce) provide a cleaner and more efficient solution.
+
+
+sum of first N numbers	 -  Add numbers from 1 to N.
+Product of first N numbers	Multiply numbers from 1 to N (Factorial logic).
+Count digits	Keep dividing by 10 until number becomes 0.
+Reverse number	Extract last digit and append to reverse.
+Palindrome number	Reverse the number and compare with original.
+Sum of digits	Extract each digit and add it to sum.
+Largest digit	Compare every digit and keep the maximum.
+Smallest digit	Compare every digit and keep the minimum.
+Count even digits	Count digits where digit % 2 === 0.
+Count odd digits	Count digits where digit % 2 !== 0.
+Print squares 1–20	Print i × i for i from 1 to 20.
+Print cubes 1–20	Print i × i × i for i from 1 to 20.
+Find factorial	Multiply numbers from 1 to N.
+Find power	Multiply base by itself exponent times.
+Find GCD	Find the largest number that divides both numbers.
+Prime number	Check if any number from 2 to n-1 divides n.
+Armstrong number	Sum of digits raised to power of digit count equals original number.
+Perfect number	Sum of proper divisors equals the number.
+Fibonacci series	Each number is the sum of previous two numbers.
+LCM	Smallest number divisible by both numbers.
+Leap year	Divisible by 400 OR divisible by 4 but not by 100.
+Palindrome string	Reverse string and compare with original.
+Count vowels	Count a, e, i, o, u in a string.
+Find maximum in array	Traverse array and keep the largest value.
+Find minimum in array	Traverse array and keep the smallest value.
+Linear search	Check each element one by one.
+Binary search	Repeatedly divide a sorted array into halves.
+Reverse array	Swap first and last elements repeatedly.
+Remove duplicates	Keep only unique elements.
