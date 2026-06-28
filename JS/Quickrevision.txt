@@ -57,3 +57,24 @@ Linear search	Check each element one by one.
 Binary search	Repeatedly divide a sorted array into halves.
 Reverse array	Swap first and last elements repeatedly.
 Remove duplicates	Keep only unique elements.
+
+
+array -   
+
+Question	Short Answer
+What is an array?	An ordered collection of elements stored in a single variable.
+Why use arrays?	To store and manage multiple values efficiently.
+How to create an array?	Using [], new Array(), Array.of(), or Array.from().
+What is indexing?	The position of an element in an array, starting from 0.
+Why index starts from 0?	Because the index represents the offset from the first memory location.
+Array vs Object?	Arrays store ordered values using indexes; objects store key-value pairs.
+Can arrays store different data types?	Yes, JavaScript arrays can contain mixed data types.
+How to get length?	Use the .length property.
+How to access elements?	Use array[index].
+How to update an element?	Assign a new value using array[index] = value.
+Access invalid index?	Returns undefined; no error is thrown for reading.
+What is a sparse array?	An array with empty slots (holes) between indexes.
+[] vs new Array()?	[] is preferred; new Array(n) creates an array with empty slots when passed a single number.
+Empty array?	An array with no elements ([]), whose length is 0.
+
+
