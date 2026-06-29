@@ -257,15 +257,16 @@ console.log(user.age); // 25
 
 // Object.seal() allows updating existing properties but prevents adding or deleting properties.
 
-const user = {
-  name: "John",
-  age: 25
-};
+// const user = {
+//   name: "John",
+//   age: 25
+// };
 
-Object.seal(user);
+// Object.seal(user);
 
-user.age = 30;      // Allowed
-user.city = "Bhopal"; // Not Allowed
-delete user.name;     // Not Allowed
+// user.age = 30;      // Allowed
+// user.city = "Bhopal"; // Not Allowed
+// delete user.name;     // Not Allowed
 
-console.log(user);
+// console.log(user);
+
