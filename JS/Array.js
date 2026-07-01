@@ -271,3 +271,190 @@ console.log(obj2.address.city);
 
 
 // structuredClone()  is a built-in JavaScript function that creates a deep copy of an object or array.
+
+
+
+// B) for...of
+// It directly gives array values.
+
+// Syntax
+// for (let value of arr) {
+//     console.log(value);
+// }
+
+// forEach()
+// Executes a callback for every array element.
+
+// arr.forEach(function(value, index) {});
+
+ arr = [10, 20, 30];
+arr.forEach((value, index) => {
+    console.log(index, value);
+});
+
+
+// When should you use forEach()? ❗
+
+// Use forEach() when you only need to perform an action for each element and do not need to create a new array or stop the loop early
+
+arr.forEach(num => {
+
+   if (num === 3) return;
+    console.log(num);
+});
+
+
+// Stops when callback returns true.  use -- some()
+
+arr.some(num => {
+ console.log(num);
+return num === 3;
+});
+
+
+
+// Stops when callback returns false.   every()
+arr.every(num => {
+    console.log(num);
+    return num < 3;
+});
+
+
+// Stops after finding the first matching element. use -- find()
+let ans = arr.find(num => num > 3);
+console.log(ans);
+
+
+
+// 4. Difference between map() and forEach()
+// map() creates a new array by applying a function to each element of the original array.
+ arr = [1, 2, 3, 4, 5];
+let newArr = arr.map(num => num * 2);
+console.log(newArr);
+
+newArr = arr.map(num => num * 2);
+console.log(newArr);
+
+
+// 5. Why is map() preferred over forEach() in React?
+
+// React renders UI by transforming data into JSX. Since map() returns a new array, it is ideal for generating lists of components. forEach() returns undefined, so it cannot be used directly inside JSX.
+
+
+// Using map() (Correct)
+function App() {
+    const fruits = ["Apple", "Banana", "Mango"];
+
+    return (
+        <ul>
+            {fruits.map((fruit, index) => (
+                <li key={index}>{fruit}</li>
+            ))}
+        </ul>
+    );
+}
+
+
+// Using forEach() (Incorrect)
+function App() {
+    const fruits = ["Apple", "Banana", "Mango"];
+
+    return (
+        <ul>
+            {
+                fruits.forEach(fruit => (
+                    <li>{fruit}</li>
+                ))
+            }
+        </ul>
+    );
+}
+
+// This doesn't work because forEach() returns undefined.
+
+
+// If you still want to use forEach()
+
+// You would need to build an array manually:
+
+const items = [];
+
+fruits.forEach((fruit, index) => {
+    items.push(<li key={index}>{fruit}</li>);
+});
+
+return <ul>{items}</ul>;
+
+// This is more verbose than using map().
+
+
+
+
+
+
+// Definition  map()   -- map() creates a new array by applying a callback function to every element of the original array.
+// Does not modify the original array. Returns a new array of the same length.
+
+// Syntax -- array.map((currentValue, index, array) => { return newValue; }); 
+let nums = [1, 2, 3, 4];
+
+let doubled = nums.map(num => num * 2);
+
+console.log(doubled);
+
+ users = ["John", "Alice"];
+
+result = users.map(name => ({
+    name: name
+}));
+
+console.log(result);
+
+
+// Definition   --- filter() creates a new array containing only elements that satisfy a condition.
+// array.filter((element) => { return condition  });
+
+ nums = [1,2,3,4,5,6];
+let even = nums.filter(num => num % 2 === 0);
+console.log(even);
+
+ users = [
+    {name:"John", age:18},
+    {name:"Alice", age:25}
+];
+
+let adults = users.filter(user => user.age >= 18);
+
+console.log(adults);
+
+// Definition   --- reduce() reduces an array to a single value by applying a callback function to each element.
+// Returns a single value.  Can return object, array, number, string, etc.
+
+
+// some()  -- Returns true if at least one element satisfies the condition.  Stops immediately after finding the first match.
+
+nums = [1,3,5,8];
+
+ans = nums.some(num => num % 2 === 0);
+
+console.log(ans);
+
+
+// flatMap()
+// flatMap() = map() + flat(1)
+
+// It maps each element and flattens one level.
+
+nums = [1,2,3];
+ans = nums.flatMap(num => [num,num*2]);
+console.log(ans);
+
+
+users=[{name:"John",age:18},{name:"Alice",age:25},{name:"Bob",age:30}];
+
+result=users.filter(user=>user.age>=21).map(user=>user.name).sort();
+
+console.log(result);  ["Alice","Bob"]
+
+
+

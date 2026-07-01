@@ -78,3 +78,41 @@ What is a sparse array?	An array with empty slots (holes) between indexes.
 Empty array?	An array with no elements ([]), whose length is 0.
 
 
+
+
+Which loop is fastest?	for
+Which loop is most readable for values?	for...of
+Which loop is best for side effects?	forEach()
+Which loop returns a new array?	map()
+Can forEach() use break?	❌ No
+Which loop works well with async/await?	for and for...of
+Which method is preferred in React?	map() because it returns an array of JSX elements.
+When to use map()?	When transforming data into a new array.
+When to use forEach()?	When performing actions like logging, updating state outside rendering, or accumulating values without needing a returned array.
+
+
+
+Method	   Returns	    Original Array Modified?	Main Purpose
+map()	   New array	❌ No	                  Transform each element
+filter()   New array	❌ No	                  Keep matching elements
+reduce()   Single value	❌ No	                  Aggregate values
+some()	   Boolean   	❌ No	                  Check if at least one matches
+every()	   Boolean	    ❌ No	                  Check if all match
+flat()	   New array	❌ No	                  Flatten nested arrays
+flatMap()  New array	❌ No	                  Map and flatten one level
+sort()	   Same array   ✅ Yes	                  Sort elements
+Chaining   Depends on the last method	 Depends on methods used	Combine multiple operations efficiently
+Custom Comparator	Number (<0, 0, >0)	Used with sort()	Define sorting logic
+
+map() → Transform data.
+filter() → Select matching data.
+reduce() → Convert an array into one value (sum, max, object, etc.).
+some() → "Does any element match?"
+every() → "Do all elements match?"
+flat() → Remove nested array levels.
+flatMap() → map() followed by flat(1).
+sort() → Mutates the original array; use a comparator for numbers.
+Comparator Rule → Negative = keep a before b, Positive = move b before a, Zero = equal.
+Chaining → Commonly combine filter(), map(), and reduce() for clean, readable code.
+
+

@@ -34,3 +34,4 @@ This is a historical bug in JavaScript. Even though typeof null returns "object"
 | `Math.trunc()`  | Decimal part hata deta hai                                             | `Math.trunc(4.9)`    | `4`                 |
 
 
+
