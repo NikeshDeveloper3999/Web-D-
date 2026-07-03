@@ -94,6 +94,32 @@ console.log(arr);
 
 
 // Count duplicates.
+let arr = [1,2,2,3,4,4,4,5];
+
+let map = new Map();
+
+for (let num of arr) {
+    map.set(num, (map.get(num) || 0) + 1);
+}
+
+for (let [key, value] of map) {
+    if (value > 1) {
+        console.log(key, "->", value, "times");
+    }
+}
+
+
+// console.log([1,2]+[3,4]);
+
+// Output
+
+// "1,23,4"
+
+// Reason
+
+// Arrays become strings during +.
+
+
 
 
 // Find second largest.
@@ -111,3 +137,23 @@ console.log(arr);
 // Sort ascending.
 // Sort descending.
 // Print alternate elements.
+
+
+
+// | Question                    | Short Interview Answer                                                                             |
+// | --------------------------- | -------------------------------------------------------------------------------------------------- |
+// | `slice()` vs `splice()`     | `slice()` copies without changing the original; `splice()` changes the original array.             |
+// | `map()` vs `forEach()`      | `map()` returns a new array; `forEach()` returns `undefined` and is used for side effects.         |
+// | `filter()` vs `find()`      | `filter()` returns all matching elements as an array; `find()` returns the first matching element. |
+// | `find()` vs `findIndex()`   | `find()` returns the value; `findIndex()` returns the index.                                       |
+// | `reduce()`                  | Reduces an array to a single value (sum, object, max, etc.).                                       |
+// | `sort()`                    | Sorts the array in place; default sorting is lexicographical (string-based).                       |
+// | Why numeric `sort()` fails? | Numbers are compared as strings unless you provide a comparator like `(a, b) => a - b`.            |
+// | Mutable methods             | `push`, `pop`, `shift`, `unshift`, `splice`, `sort`, `reverse`.                                    |
+// | Immutable methods           | `map`, `filter`, `reduce`, `slice`, `concat`, `flat`, `flatMap`.                                   |
+// | Time complexity             | `push()` **O(1)** average, `pop()` **O(1)**, `shift()` **O(n)**, `unshift()` **O(n)**.             |
+// | Remove duplicates           | `[...]new Set(array)` (or `Array.from(new Set(array))`).                                           |
+// | Flatten arrays              | `flat()` or `flat(Infinity)` for deeply nested arrays.                                             |
+// | Merge arrays                | Spread operator (`[...a, ...b]`) or `concat()`.                                                    |
+// | Shallow vs Deep copy        | Shallow copies share nested references; deep copies duplicate nested objects too.                  |
+// | `some()` vs `every()`       | `some()` checks if **any** element matches; `every()` checks if **all** elements match.            |
