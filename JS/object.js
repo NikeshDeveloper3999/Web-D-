@@ -14,6 +14,8 @@ console.log( person.name); // Output: nikesh
 
 
 // How do you check whether a property exists?
+
+
 // Difference between delete and assigning undefined.
 // Difference between in and hasOwnProperty().
 // Difference between Object.keys() and Object.values().
