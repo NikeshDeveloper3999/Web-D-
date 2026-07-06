@@ -135,3 +135,18 @@ Chaining → Commonly combine filter(), map(), and reduce() for clean, readable 
 | Shallow vs Deep copy        | Shallow copies share nested references; deep copies duplicate nested objects too.                  |
 | `some()` vs `every()`       | `some()` checks if **any** element matches; `every()` checks if **all** elements match.            |
 
+
+| Question            | Answer                                        |
+| ------------------- | --------------------------------------------- |
+| Add property        | `obj.key = value`                             |
+| Update property     | `obj.key = newValue`                          |
+| Delete property     | `delete obj.key`                              |
+| Property exists     | `"key" in obj` or `obj.hasOwnProperty("key")` |
+| Get keys            | `Object.keys(obj)`                            |
+| Get values          | `Object.values(obj)`                          |
+| Get key-value pairs | `Object.entries(obj)`                         |
+| Merge objects       | `Object.assign()` or `{ ...obj1, ...obj2 }`   |
+| Duplicate keys      | Last value overwrites previous one            |
+
+
+
