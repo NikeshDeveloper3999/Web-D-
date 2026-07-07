@@ -326,7 +326,7 @@ console.log( Unobj)
 
 // Find longest property name.
 
-obj = {
+obj = { 
     name: "Nikesh",
     address: "Bhopal",
     qualification: "MSc"
@@ -348,3 +348,83 @@ console.log(longest);
  const count = Object.values(obj).filter(value =>typeof value === "number")
 console.log(count.length)
 
+
+
+// deep copy 
+const user = {
+ name: "Nikesh",
+    address: {
+        city: "Bhopal"
+    }
+};
+
+const copy = structuredClone(user);
+
+copy.address.city = "Delhi";
+
+console.log(user.address.city); // Bhopal
+console.log(copy.address.city); // Delhi
+
+
+// Implement object flattening.
+
+function flattenObject(obj, parent = "", result = {}) {
+    for (const key in obj) {
+        const value = obj[key];
+        // Create the new key
+        const newKey = parent ? `${parent}.${key}` : key;
+        // Check if value is a nested object
+        if (
+            value !== null &&
+            typeof value === "object" &&
+            !Array.isArray(value)
+        ) {
+            flattenObject(value, newKey, result);
+        } else {
+            result[newKey] = value;
+        }
+    }
+
+    return result;
+}
+
+ obj = {
+    name: "Nikesh",
+    age: 22,
+    address: {
+        city: "Bhopal",
+        state: "MP"
+    },
+    education: {
+        college: {
+            name: "LNCT",
+            year: 2024
+        }
+    }
+};
+
+console.log(flattenObject(obj));
+
+
+
+// Build configuration manager.
+// Create immutable updates.
+// Build cache using object.
+// Implement LRU cache.
+// Build memoization object.
+// Dynamic form generator.
+// Build REST response mapper.
+// Implement proxy logger.
+// Build settings manager.
+// Deep merge objects.
+// Build object validator.
+// Build JSON diff tool.
+// Clone circular objects.
+// Object comparison utility.
+// Nested search engine.
+// Dynamic API response parser.
+// Permission management system.
+// Localization object manager.
+// User profile manager.
+// Dynamic theme manager.
+// Object-based state manager.
