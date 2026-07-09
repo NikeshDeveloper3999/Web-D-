@@ -425,6 +425,6 @@ console.log(flattenObject(obj));
 // Dynamic API response parser.
 // Permission management system.
 // Localization object manager.
-// User profile manager.
+// User profile manager. 
 // Dynamic theme manager.
 // Object-based state manager.

@@ -148,5 +148,27 @@ Chaining → Commonly combine filter(), map(), and reduce() for clean, readable 
 | Merge objects       | `Object.assign()` or `{ ...obj1, ...obj2 }`   |
 | Duplicate keys      | Last value overwrites previous one            |
 
+| Topic                          | Key Point                                                                                                                      |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| Spread (`...`)                 | Shallow copy; nested objects share references.                                                                                 |
+| `structuredClone()`            | Deep copy of supported built-in types.                                                                                         |
+| `JSON.parse(JSON.stringify())` | Deep copies simple data but loses functions, `undefined`, Symbols, `Map`, `Set`, prototypes, and fails on circular references. |
+| Method shorthand               | `greet() {}` is a shorter syntax for methods.                                                                                  |
+| `this`                         | In regular methods, `this` refers to the calling object; arrow functions don't bind their own `this`.                          |
+| Computed properties            | Use `[expression]` to create dynamic property names.                                                                           |
+| Symbol keys                    | Unique property keys that help avoid naming collisions.                                                                        |
+| `Object.assign()`              | Later source objects overwrite earlier properties with the same key.                                                           |
+| Nested destructuring           | Extract nested values directly into variables.                                                                                 |
+| Optional chaining (`?.`)       | Safely access nested properties or methods without throwing errors.                                                            |
+
+A function is a reusable block of code.
+Parameters are variables in the function definition; arguments are the values passed when calling it.
+return ends a function and sends back a value; without it, the function returns undefined.
+Rest (...args) collects values into an array; spread (...array) expands values.
+Prefer rest parameters over arguments in modern JavaScript.
+Functions are first-class citizens, so they can be stored in variables, passed to other functions, and returned from functions.
+
+
+
 
 
