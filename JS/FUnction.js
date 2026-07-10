@@ -333,6 +333,133 @@ first
 
 first finishes:
 Global
-
-
 */
+
+
+
+
+// Function returning an object.
+// let obj = {name: "Nikesh", age: 22}
+let person = function () {
+    return {
+        name: "Nikesh",
+        age: 22
+    };
+};
+
+console.log(person());
+
+// Function returning an array.
+
+ arr = [3, 'nikesh', null];
+function getArray() {
+    return arr;
+}
+console.log(getArray());
+function getNumbers() {
+    return [1, 2, 3, 4, 5];
+}
+
+// Pass a function as an argument.
+
+function func() {
+ console.log(' second function ')
+}
+
+function createCounter(func){
+
+return func();
+
+}
+
+console.log(createCounter(func));
+
+// Function returning another function.
+// This demonstrates closures and higher-order functions.
+function createCounter(msg) {
+
+    return function (name) {
+    return  `${msg} ${name}`
+};
+}
+let sayhello =  createCounter("Hello");
+console.log( sayhello("Nikesh"))
+
+
+// Build a custom callback.
+// A callback is a function passed into another function and executed later.
+
+function fetchData(callback) {
+  console.log("Fetching data...");
+
+  callback("Data received");
+}
+
+function handleData(data) {
+  console.log(data);
+}
+
+fetchData(handleData);
+
+
+
+// Create a calculator using functions.
+// using callback
+function calculator(a, b, callback) {
+  return callback(a, b);
+}
+
+function add(a, b) {return a + b;}  
+function subtract(a, b) {return a - b;}
+function multiply(a, b) {return a * b;}
+function divide(a, b) {return a / b;}
+
+console.log(calculator(5, 3, add));
+console.log(calculator(5, 3, subtract));
+console.log(calculator(5, 3, multiply));
+console.log(calculator(5, 3, divide));
+
+
+
+// Implement recursion for factorial.
+let factorial = function func(n) {
+    if (n === 0) return 1;
+    return n * func(n - 1);
+};
+console.log(factorial(5));
+
+
+
+// Implement recursion for Fibonacci.
+// Flatten a nested array recursively.
+// Deep clone recursively.
+// Custom implementation of map().
+// Custom implementation of filter().
+// Custom implementation of reduce().
+// Custom implementation of find().
+// Custom implementation of every().
+// Custom implementation of some().
+// Custom implementation of forEach().
+// Create a memoized function.
+// Create a function composition utility.
+// Build a pipe function.
+// Implement currying for addition.
+// Implement partial application.
+// Implement debounce.
+// Implement throttle.
+// Build a once function.
+// Build a retry function.
+// Build a delay function.
+// Create a logger wrapper.
+// Create a timer utility.
+// Build a caching function.
+// Build a function to execute N times.
+// Create a chainable calculator.
+// Implement recursive object flattening.
+// Recursive tree traversal.
+// Build a custom event emitter.
+// Function to compare objects.
+// Function to validate input.
+// Function to parse query strings.
+// Function to serialize objects.
+// Function to clone objects deeply.
