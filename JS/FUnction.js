@@ -81,3 +81,258 @@ function add(a, b, c) {
 }
 const arr = [1, 2, 3];
 console.log(add(...arr));
+
+// Difference between function declaration and function expression.
+// ans -- function declaration is when you declare a function before using it  and function expression is when you assign a function to a variable
+function declaration() {
+    console.log("This is a function declaration");
+}  
+// function declaration()  sapport hoisting  
+
+
+// function expression()  does not support hoisting 
+let expression = function () {
+    console.log("This is a function expression");
+}
+
+// What is an anonymous function?
+// ans -- an anonymous function is a function without a name  Mostly used as callbacks.
+setTimeout(function () {
+    console.log("This is an anonymous function");
+}, 1000);
+
+
+// What is a named function expression?
+// ans -- A function expression that has its own name.  mostly used in recursion
+let namedExpression = function named() {
+    console.log("This is a named function expression");
+}
+
+
+// What is an arrow function?
+// Introduced in ES6. It provides a more concise syntax for writing function expressions.  its a short syntax for writing function expressions
+// short form  ---  const add = (a, b) => a + b;  
+// const square = x => x * x;
+
+// Difference between normal functions and arrow functions.
+
+
+// When should you use arrow functions?
+//  in map and filter reduce callback promises
+const nums = [1,2,3];
+
+const doubled = nums.map(n => n * 2);
+
+// When should you avoid arrow functions?
+// in Object methods, Constructors, Prototype methods, Event handlers needing this  
+
+
+// What is an Immediately Invoked Function Expression (IIFE)?
+// Immediately Invoked Function Expression.
+// Runs immediately after creation.
+(function () {
+    console.log("Hello");
+})();
+
+// Arrow version
+
+(() => {
+    console.log("Hello");
+})();
+9.
+
+ // Why are IIFEs used?
+// efore ES6 modules they were used for
+// Creating private variables
+// Avoiding global pollution
+// Running initialization code immediately
+
+// (function () {
+//     let secret = "123";
+// })();
+
+// Cannot access
+// console.log(secret);
+
+
+
+// What is a callback function?
+
+
+// What is a higher-order function?
+// Explain first-class functions.
+// Explain first-class citizens in JavaScript.
+
+
+// Can functions be passed as arguments?
+// yes functions can be passed as arguments
+
+
+ function fun(){
+
+    console.log('I am a function');
+ }
+
+
+ 
+ function execute(fun){
+console.log( 'receiver function ');
+fun();
+ }
+
+ execute(fun);
+
+
+
+
+// Can functions return other functions?
+// Yes, functions can return other functions.
+
+function firstFun() {
+    
+    return function () {
+        console.log("This is a function");
+    };
+}
+
+
+const secondFun = firstFun();
+secondFun();
+
+// What are pure functions?
+// A function that always returns the same output for the same input and has no side effects.  It does not modify any external state or variables.
+function add(a, b) {
+    return a + b;
+}
+
+
+
+// What are impure functions?
+// Depends on outside data or changes something.
+
+let total = 0;
+function add(value) {
+    total += value;
+}
+
+
+// What is function composition?
+// Function composition is the process of combining two or more functions to produce a new function. The output of one function becomes the input of the next function.
+
+
+const double = x => x * 2;
+
+const square = x => x * x;
+
+const result = square(double(5));
+
+console.log(result);
+
+// What is currying? (Introduction)
+// Currying is the process of converting a function that takes multiple arguments into a sequence of functions, each with a single argument.
+// f(a,b,c)  into f(a)(b)(c)
+function add(a) {
+    return function (b) {
+        return a + b;
+    };
+}
+
+console.log(add(2)(3));
+
+
+// What is partial application?
+// Fixing some arguments now and supplying the rest later is called partial application.
+
+// What is memoization? (Introduction)
+
+
+// What is tail recursion?
+// Tail recursion is a recursion pattern where the recursive call is the final operation in the function, with no computation left after it returns.
+
+// Difference between synchronous and asynchronous functions.
+// A synchronous function executes one task at a time. The next line of code waits until the current task is finished.   
+// An asynchronous function allows other code to run while waiting for a task (such as an API call, file read, or timer) to complete. It does not block the execution of the program.
+
+
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Hello");
+}, 1000);
+
+console.log("End");
+
+// setTimeout() is asynchronous, so JavaScript schedules the callback and continues executing the remaining code
+
+
+// What is lexical scope?
+// What is a closure? (Introduction)
+
+// Why are functions called reusable blocks?
+// Functions let you write logic once and call it many times, which:
+// Reduces code duplication
+// Improves readability
+// Makes maintenance easier
+// Encourages modular code
+
+
+// How does JavaScript execute functions?
+// When a function is called:
+
+// The JavaScript engine creates an Execution Context.
+// The function is pushed onto the Call Stack.
+// Local variables and parameters are initialized.
+// The function executes line by line.
+// After completion, it is removed (popped) from the Call Stack.
+
+
+// Explain the call stack briefly.
+// The Call Stack is a LIFO (Last In, First Out) data structure that tracks function calls.
+function first() {
+    second();
+}
+
+function second() {
+    third();
+}
+
+function third() {
+    console.log("Done");
+}
+/** Call Stack  
+
+first();
+
+
+Start:
+Global
+
+Call first():
+Global
+first
+
+Call second():
+Global
+first
+second
+
+Call third():
+Global
+first
+second
+third
+
+third finishes:
+Global
+first
+second
+
+second finishes:
+Global
+first
+
+first finishes:
+Global
+
+
+*/
