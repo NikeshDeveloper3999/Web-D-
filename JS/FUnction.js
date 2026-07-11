@@ -463,3 +463,53 @@ console.log(factorial(5));
 // Function to parse query strings.
 // Function to serialize objects.
 // Function to clone objects deeply.
+
+
+// Difference between function declaration and function expression.
+// Function declarations are hoisted to the top of their scope, while function expressions are not hoisted.
+
+// Difference between normal functions and arrow functions.
+// Normal functions have their own this context, can be used as a constructor with the new keyword, and have their own arguments object. Arrow functions inherit this from the parent scope does not have own its argument cannot be used as a constructor . 
+
+// What are first-class functions?
+// First-class functions are functions that can be treated like any other variable. This means that functions can be assigned to variables, passed as arguments to other functions, and returned from other functions.
+
+
+// What are higher-order functions?
+// A higher-order function is a function that takes one or more functions as arguments or returns a function as its result.
+// exp 1
+function greet(name) {
+    console.log("Hello " + name);
+}
+
+function processUser(callback) {
+    callback("John");
+}
+
+processUser(greet);
+
+
+// exp2 
+
+function multiply(x) {
+    return function (y) {
+        return x * y;
+    };
+}
+
+ double = multiply(2);
+console.log(double(5));
+
+
+// What are callback functions?
+// A callback is a function that is passed as an argument to another function and is executed later.
+
+
+// What is the difference between arguments and rest parameters?
+// Arguments is an array-like object containing all arguments passed to a function.
+// Rest parameters is a syntax that allows a function to accept an indefinite number of arguments as an array.
+
+// Explain call(), apply(), and bind().\\
+// What is function currying?
+// What is memoization?
+// How do functions relate to closures and lexical scope?
