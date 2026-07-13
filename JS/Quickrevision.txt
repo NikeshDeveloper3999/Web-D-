@@ -168,6 +168,23 @@ Rest (...args) collects values into an array; spread (...array) expands values.
 Prefer rest parameters over arguments in modern JavaScript.
 Functions are first-class citizens, so they can be stored in variables, passed to other functions, and returned from functions.
 
+What is lexical scope?	A function accesses variables based on where it is defined, not where it is called.
+What is the scope chain?	The chain of scopes JavaScript searches for variables.
+How does JavaScript resolve variables?	By searching current scope, then parent scopes, up to the global scope.
+What if a variable isn't found?	ReferenceError: variable is not defined.
+What is variable shadowing?	An inner variable with the same name hides the outer variable within its scope.
+What is illegal shadowing?	Declaring variables in conflicting ways (such as var conflicting with an existing let in the same scope), causing a syntax error.
+What is namespace pollution?	Too many globals causing naming conflicts and harder maintenance.
+What are global variables?	Variables declared outside functions or blocks, accessible throughout the program.
+Why avoid global variables?	They can be modified from anywhere, increasing bugs and conflicts.
+How does nested scope work?	Inner scopes can access variables from outer scopes.
+What are nested functions?	Functions defined inside other functions.
+Can child functions access parent variables?	✅ Yes.
+Can parent functions access child variables?	❌ No.
+What is scope lookup?	The search for a variable through the scope chain.
+What is scope resolution?	The process of determining which variable reference is used by following the scope chain.
+
+
 
 
 

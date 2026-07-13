@@ -90,13 +90,73 @@ outer();
 
 
 // What happens if a variable is not found?
+// java script throw a ReferenceError 
 
-// What is namespace pollution?
 // What are global variables?
+// Global variables are declared outside any function or block and are accessible throughout the program.
+
 // Why should global variables be avoided?
+// because it can modified  anywhere    make debuging hardder   reduce code redability 
+let total = 100;
+
+function add() {
+    total += 50;
+}
+
+function remove() {
+    total -= 30;
+}
+
+
 // How does nested scope work?
+// Nested scope means an inner scope can access variables from its outer scope.
+
+function outer() {
+    let a = 10;
+
+    function inner() {
+        let b = 20;
+
+        console.log(a);
+        console.log(b);
+    }
+
+    inner();
+}
+
+outer();
+
 // Explain nested functions.
-// Can child functions access parent variables?
-// Can parent functions access child variables?
+// a nested function ia a function define inside another function 
+
+function outer() {
+
+    function inner() {
+        console.log("Hello");
+    }
+
+    inner();
+}
+
+outer();
+
+
+
 // Explain scope lookup.
+// Scope lookup is the process JavaScript uses to find a variable.
+
+let aa = 1;
+function outer() {
+    let b = 2;
+
+    function inner() {
+        console.log(aa);
+        console.log(b);
+    }
+
+    inner();
+}
+
+outer();
+
 // Explain scope resolution.
