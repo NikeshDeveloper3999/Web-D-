@@ -1,0 +1,136 @@
+JavaScript Core
+Scope
+Lexical Environment
+Hoisting
+Execution Context
+Call Stack
+Closures
+this keyword
+Bind, Call, Apply
+Event Loop
+Callback Functions
+Callback Hell
+Promises
+Promise Chaining
+Async/Await
+Microtask Queue
+Macrotask Queue
+Arrays (Advanced)
+map
+filter
+reduce
+find
+findIndex
+every
+some
+flat
+flatMap
+sort complexities
+Objects (Advanced)
+Object.keys
+Object.values
+Object.entries
+Object.assign
+Freeze
+Seal
+Descriptors
+ES6+
+Arrow Functions
+Template Literals
+Destructuring
+Spread Operator
+Rest Operator
+Default Parameters
+Optional Chaining
+Nullish Coalescing
+Modules
+Dynamic Imports
+OOP
+Constructor Functions
+Prototype
+Prototype Chain
+Classes
+Inheritance
+Encapsulation
+Polymorphism
+Abstraction
+Browser
+Event Delegation
+Event Bubbling
+Event Capturing
+LocalStorage
+SessionStorage
+Cookies
+CORS
+APIs
+Fetch API
+Axios
+REST APIs
+API Error Handling
+Functional Programming
+Higher Order Functions
+Currying
+Memoization
+Pure Functions
+Immutability
+Performance
+Debouncing
+Throttling
+Lazy Loading
+Code Splitting
+Security
+XSS
+CSRF
+Authentication
+JWT
+Advanced
+Generators
+Iterators
+Symbol
+BigInt
+WeakMap
+WeakSet
+Proxy
+Reflect
+Garbage Collection
+Memory Leaks
+
+
+' js 
+Beginner
+Variables & Data Types
+Operators
+Conditional Statements
+Loops
+Arrays Basics
+Objects Basics
+Functions Basics
+
+Intermediate
+Scope & Hoisting
+Closures
+Execution Context
+Call Stack
+DOM Manipulation
+Events & Event Delegation
+Array Methods
+ES6+ Features
+
+Advanced
+Callbacks
+Promises
+Async/Await
+Event Loop
+OOP in JavaScript
+Prototypes & Inheritance
+Browser Storage
+Fetch API
+Expert
+Debouncing
+Throttling
+Currying
+Memoization
+Design Patterns
+Security
+Performance Optimization
+Advanced JavaScript
