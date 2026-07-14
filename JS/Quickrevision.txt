@@ -186,6 +186,36 @@ What is scope resolution?	The process of determining which variable reference is
 
 
 
+Topic         	Key Point
+Hoisting	Declarations are processed before execution.
+var	Hoisted and initialized to undefined.
+let	Hoisted but uninitialized (TDZ).
+const	Hoisted but uninitialized (TDZ); cannot be reassigned.
+Function declaration	Fully hoisted.
+Function expression	Variable hoisted; function assigned later.
+Arrow function	Same behavior as function expressions.
+TDZ	Period before let/const/class initialization where access throws ReferenceError.
+Memory Creation Phase	Allocates memory for declarations.
+Execution Phase	Runs code and assigns values.
+undefined	Variable exists but has not been assigned a value.
+ReferenceError	Variable cannot be accessed (e.g., in the TDZ or not declared).
+TypeError	You tried to use a value of the wrong type (e.g., calling undefined as a function).
 
 
 
+| Concept                              | Description                                                                                                              |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| **Execution Context**                | The environment where JavaScript executes code, holding variables, functions, `this`, and scope information.             |
+| **Global Execution Context (GEC)**   | Created once when the program starts.                                                                                    |
+| **Function Execution Context (FEC)** | Created every time a function is called.                                                                                 |
+| **Creation Phase**                   | Allocates memory, sets `var` to `undefined`, leaves `let`/`const` uninitialized (TDZ), and stores function declarations. |
+| **Execution Phase**                  | Runs code line by line and assigns values.                                                                               |
+| **Call Stack**                       | A LIFO stack that manages execution contexts during function calls.                                                      |
+| **Stack Overflow**                   | Occurs when too many execution contexts are pushed without being removed, usually due to infinite recursion.             |
+
+
+| Term                            | Meaning                                                                                                           |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **Lexical Environment**         | The internal structure that contains the current scope's variables/functions and a reference to the parent scope. |
+| **Environment Record**          | Stores variables, functions, and parameters declared in the current scope.                                        |
+| **Outer Environment Reference** | A link to the parent lexical environment, enabling variable lookup through the scope chain.                       |
