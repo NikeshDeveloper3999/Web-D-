@@ -125,3 +125,134 @@ selectFood(() => {
 // Step 5:
 // When deliverFood() completes its task, it executes its callback.
 // Inside that callback, call completeOrder() to complete the food delivery process.
+
+
+
+// What is a Promise ✅
+// A Promise is a better way to handle asynchronous operations than callbacks. It helps avoid callback hell.
+
+// A Promise is an object that represents the  (success) or failure of an asynchronous operation.
+/*
+new Promise() takes a callback function with two parameters:
+resolve → Success
+reject → Failure
+
+*/
+console.log( 'promise section ')
+
+
+
+ let response = new Promise ((resolve  , reject  )=>{
+
+    let response = true;
+ if(response){
+  resolve("success")
+ }else{
+  reject("failure")
+ }
+ })
+
+
+response.then((data)=>{
+  console.log(data);
+}).catch((error)=>{
+  console.log(error);
+})
+
+
+let pr = new Promise((resolve, reject) => {
+
+setTimeout(()=>{ 
+
+let random_num = Math.floor(Math.random()*10)
+if(random_num > 5){resolve(  'resolve ' +  random_num);}
+else{   reject( ' reject '+random_num)}
+
+}, 1000)
+});
+
+pr.then((data)=>{
+  console.log(data);
+}).catch((error)=>{
+  console.log(error);
+})
+
+
+/* Each .then() waits for the previous promise to resolve.
+
+3. What is resolve()?
+
+Marks the promise as successful and passes the result to .then().
+
+4. What is reject()?
+
+Marks the promise as failed and passes the error to .catch().
+
+5. What is Promise Chaining?
+
+Using multiple .then() calls where each one waits for the previous promise to resolve.
+
+login()
+    .then(getProfile)
+    .then(getOrders)
+    .then(logout)
+    .catch(console.error);
+
+*/
+
+ 
+
+
+// aasync & await is used to handle asynchrouns operation 
+
+
+/* 1. async keyword 
+ a function  declared with async keyword always return a promise -- 
+  whatever we return inside it automatically becomes a resolved promise 
+ */
+
+async function  greet() {
+
+    return hello ;
+
+}
+
+// async function return always promise 📍
+// console.log( greet() ); -- return promise ;
+
+ greet().then((data)=>{ console.log(data)});  // handle promise 
+
+
+
+//  📍📍📍📍📍
+
+ const f1 = () =>{
+return new Promise((resolve , reject )=>{
+
+setTimeout(()=>{
+    resolve('promise resolved ');
+},2000)
+});
+ }
+
+console.log(f1());
+f1().then((dtaa)=>{console.log(data)});
+
+
+/* await keyword 
+can only be used inside async function 
+it pause the execution of the function until the promise resolved 
+it makes asynchronous code look synchronous 
+*/
+
+
+
+async function resolvepromise(params) {
+console.log('resolve promise ');
+
+
+    let data = await  f1();  // f1 ek async function ha jo promise return kar raha ha aur await keyword usse promise ko handle kar raha ha 
+   console.log(data);
+}
+
+
