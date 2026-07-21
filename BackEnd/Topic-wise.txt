@@ -1,0 +1,31 @@
+
+topic wise List 
+day1 - how to create server 
+day2 - create a server and connect to mongo db 
+day 3 - create a structure 
+
+
+callback function ko call karne ko call karne ke liye () ki jarurat nahi hoti 
+
+app.get('/api/orders', async (req, res) => {
+  const orders = await db.query(
+    'SELECT * FROM orders ORDER BY created_at DESC'
+  );
+  const enriched = [];
+  for (const order of orders.rows) {
+    const customer = await db.query(
+      'SELECT * FROM customers WHERE id = $1',
+      [order.customer_id]
+    );
+    const items = await db.query(
+      'SELECT * FROM order_items WHERE order_id = $1',
+      [order.id]
+    );
+    enriched.push({
+      ...order,
+      customer: customer.rows[0],
+      items: items.rows
+    });
+  }
+  res.json(enriched);
+});

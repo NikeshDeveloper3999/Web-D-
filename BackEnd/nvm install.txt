@@ -1,0 +1,27 @@
+download NVM   -
+
+open browser search -  NVM download 
+
+https://github.com/coreybutler/nvm-windows/releases
+
+download - n vm-setup.exe
+
+then  cmd  
+nvm install 14 -- thats download node.js 14 version 
+
+Downloading node.js version 14.21.3 (64-bit)...
+
+
+check all node.js version download using 
+
+-- nvm list
+
+
+switch to other node.js version 
+
+-- nvm use 22 -- 22 is version of our node.js
+
+
+
+
+

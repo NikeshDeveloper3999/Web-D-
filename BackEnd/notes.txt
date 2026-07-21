@@ -1,0 +1,257 @@
+
+node.js 
+
+day1  module 
+"A module is a reusable, self-contained piece of code that exports functionality and can be imported into other files."
+example - imported  
+const express = require("express");
+
+const fs = require("fs");
+
+export -
+module.exports = add;
+ 
+day2  - file Handling
+day3 - http server
+url - https//domain/path example --> https://www.youtube.com/watch
+url query parameter /?=& - https://www.youtube.com/watch?v=Nt-AsZh5woE&list=PLinedj3B30sDby4Al
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Package.json file pura ka pura version control karega 
+Nodemulde 
+
+
+
+
+Step 1 - Create first server.js file 
+Step2 - npm init -y 
+Step 3 - npm i express 
+Step 4- npm i nodemon -D  (-D is create new dependence rhats we called devdependence)
+Step 5 - npm i mongoose 
+Step 6-  npm i dotenv 
+
+
+
+
+In server.js file 
+Const express = require(‘express’)
+Const app =express();
+app.listen(3000,()=>{
+console.log(“ server is running in port 3000” );
+})
+
+
+callback function ko call karne  ke liye () parentheses  ki jarurat nahi hoti 
+
+q- what is code optimizetion and why you imliment code optimizetion
+ans -  code optimizetion se program ka response   fast hota user experience badta ha
+
+
+types of routes 
+public routes  
+private routes 
+protected routes 
+
+
+aggregate 
+
+
+roadmap  backend 
+8-Week Backend Interview Roadmap
+Week 1: JavaScript (Advanced)
+
+Master:
+
+Execution Context
+Call Stack
+Hoisting
+Closures
+Lexical Scope
+this keyword
+call(), apply(), bind()
+Event Loop
+Promises
+async/await
+Prototype
+Classes
+Modules
+
+Interview Questions:
+
+Difference between var, let, and const
+What is a closure?
+Explain event loop.
+Microtask vs Macrotask.
+Explain Promise chaining.
+What is currying?
+
+Week 2: Node.js
+
+Master:
+Node Architecture
+Event Loop
+Thread Pool
+Streams
+Buffers
+EventEmitter
+fs
+path
+os
+crypto
+
+Interview Questions:
+
+Why Node.js?
+Single Thread vs Multi Thread
+Cluster
+Worker Threads
+Child Process
+Process object
+Week 3: Express.js
+
+Master:
+Routing
+Middleware
+Error Handling
+MVC
+Authentication
+JWT
+Cookies
+Sessions
+Validation
+File Upload (multer)
+
+Interview Questions:
+
+Middleware lifecycle
+next()
+Authentication vs Authorization
+Centralized Error Handling
+Rate Limiting
+Helmet
+CORS
+Week 4: MongoDB
+
+Master:
+
+CRUD
+Aggregation
+Indexing
+Compound Index
+Text Index
+Transactions
+populate()
+Schema Design
+
+Interview Questions:
+
+Why MongoDB?
+Embedded vs Referenced Documents
+Aggregation Pipeline
+Indexes
+Explain $lookup
+Explain $group
+Week 5: Authentication & Security
+
+Master:
+
+JWT
+Refresh Token
+Access Token
+Password Hashing (bcrypt)
+OAuth
+Cookies
+CSRF
+XSS
+SQL Injection vs NoSQL Injection
+
+Interview Questions:
+
+Why bcrypt?
+Why JWT?
+How does login work?
+Secure authentication flow.
+Week 6: APIs
+
+Master:
+
+REST API
+HTTP Methods
+Status Codes
+Pagination
+Filtering
+Sorting
+API Versioning
+
+Interview Questions:
+
+PUT vs PATCH
+POST vs PUT
+200 vs 201
+401 vs 403
+404 vs 500
+Week 7: Projects
+
+You should be able to explain every feature you've built.
+
+For your projects, be ready to discuss:
+
+Folder structure
+JWT authentication
+Authorization
+Database schema
+Why MongoDB?
+Deployment
+Challenges you solved
+Performance improvements
+
+Interviewers often spend a lot of time on project discussions.
+
+Week 8: System Design (Beginner)
+
+Learn:
+
+MVC
+Layered Architecture
+Caching
+Redis (basics)
+Rate Limiting
+Load Balancer (basics)
+Scaling
+Logging
+DSA Topics
+
+Practice these regularly:
+
+Arrays
+Strings
+HashMap
+Stack
+Queue
+Linked List
+Binary Search
+Sliding Window
+Two Pointer
+Prefix Sum
+Trees (basic)
+Heap (basic)
+
+
+
+
