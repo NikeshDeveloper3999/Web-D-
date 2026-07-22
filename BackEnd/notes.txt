@@ -11,12 +11,79 @@ const fs = require("fs");
 export -
 module.exports = add;
  
-day2  - file Handling
-day3 - http server
+file Handling
+http server
 url - https//domain/path example --> https://www.youtube.com/watch
 url query parameter /?=& - https://www.youtube.com/watch?v=Nt-AsZh5woE&list=PLinedj3B30sDby4Al
+Http Methods  -> Get post put patch delete 
+
+GEt - GET is used to fetch data from the server. It should not modify any data.
+post - POST is used to create a new resource on the server.
+put - PUT updates or replaces the entire resource.
+patch - PATCH updates only the specified fields of a resource.
+delete - DELETE removes a resource from the server
+
+Node Architecture
+Event Loop
+Thread Pool
+Streams
+Buffers
+EventEmitter
+fs
+path
+os
+crypto
 
 
+
+Expres -- ✅
+
+Express.js is a lightweight web framework built on top of Node.js that makes it easier to build web servers and REST APIs.
+---   Less code  Easier routing Middleware support  Better readability
+
+
+creating express server -- 
+
+install  - express 
+
+const express = require("express");
+
+const app = express();
+
+const PORT = 3000;
+
+app.get("/", (req, res) => {
+    res.send("Hello Express");
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
+
+
+
+
+
+<------       REST API  ✅   ------>
+
+A REST API is a set of rules that allows a client (browser, mobile app, Postman, etc.) to communicate with a server using HTTP methods like GET, POST, PUT, PATCH, and DELETE.
+
+
+How REST API Works
+Client (Browser/Postman)
+          │
+     HTTP Request
+          │
+          ▼
+      REST API Server
+          │
+    Process Request
+          │
+          ▼
+     Database (MongoDB)
+          │
+          ▼
+      HTTP Response (JSON)
 
 
 
@@ -35,7 +102,6 @@ url query parameter /?=& - https://www.youtube.com/watch?v=Nt-AsZh5woE&list=PLin
 
 Package.json file pura ka pura version control karega 
 Nodemulde 
-
 
 
 
@@ -123,6 +189,7 @@ Cluster
 Worker Threads
 Child Process
 Process object
+
 Week 3: Express.js
 
 Master:
