@@ -86,10 +86,89 @@ Client (Browser/Postman)
       HTTP Response (JSON)
 
 
+
+<---  Middleware --->
+
+Middleware is a function that has access to the request object (req), response object (res), and the next() function. It runs before the route handler and can process the request
+
+
+Middleware Flow
+Client
+   │
+   ▼
+Middleware 1
+   │
+next()
+   ▼
+Middleware 2
+   │
+next()
+   ▼
+Route Handler
+   │
+Response
+
+
+Middleware Syntax
+function middleware(req, res, next) {
+
+    console.log("Middleware executed");
+
+    next();
+}
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 It is middleware that parses incoming application/x-www-form-urlencoded request bodies (such as data submitted from HTML forms or Postman key-value form data) and makes the parsed data available in req.body.
+
+
+
+
+<---- http headers ---- > 
+
+Headers are additional information sent along with an HTTP request or response.
+
+Think of them as the metadata of an HTTP request.
+
+Example:
+
+GET /users HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+Authorization: Bearer xyz123
+User-Agent: PostmanRuntime
+
+The body contains the actual data, while headers describe the request.
+
+
+< ---  Status Code  ---- >
+
+
+HTTP response status codes
+HTTP response status codes indicate whether a specific HTTP request has been successfully completed. Responses are grouped in five classes:
+
+Informational responses (100 – 199)
+Successful responses (200 – 299)
+Redirection messages (300 – 399)
+Client error responses (400 – 499)
+Server error responses (500 – 599)
+
+Code	Meaning	When to Use
+200	OK	GET, successful update
+201	Created	POST (new resource created)
+204	No Content	Successful DELETE with no response body
+400	Bad Request	Invalid input or validation error
+401	Unauthorized	Missing/invalid authentication
+403	Forbidden	No permission
+404	Not Found	Resource doesn't exist
+409	Conflict	Duplicate email/username
+500	Internal Server Error	Unexpected server error
+
+
+
+
 
 
 
