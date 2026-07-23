@@ -86,6 +86,12 @@ Client (Browser/Postman)
       HTTP Response (JSON)
 
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+It is middleware that parses incoming application/x-www-form-urlencoded request bodies (such as data submitted from HTML forms or Postman key-value form data) and makes the parsed data available in req.body.
+
+
 
 
 

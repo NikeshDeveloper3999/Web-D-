@@ -3,6 +3,10 @@ const app = express();
 const usersData = require("./Dummy-data.json");
 const fs = require("fs");
 
+app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+
+
 app.get("/", (req, res) => {
     try{
         res.send("server is running");
@@ -45,9 +49,9 @@ app.get('/user/:id' , (req ,res)=>{
 
 app.post('/create-user' , (req, res)=>{
 try{
+
 const newUser = req.body;
 console.log(newUser);
-
 usersData.push(newUser);  
 fs.writeFile("./Dummy-data.json", JSON.stringify(usersData), (err) => {
     if (err) throw err;
