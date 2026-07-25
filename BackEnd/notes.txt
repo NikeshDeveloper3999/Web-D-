@@ -171,6 +171,51 @@ Code	Meaning	When to Use
 
 
 
+<---- Mongo DB --->
+
+
+cmd -- 
+mongosh -- check version and details 
+showdbs -- check all Database 
+use <db_name>  -- use specific DB
+
+
+
+
+
+
+--- use mongoose  ---
+  1. install  -- npm i mongoose
+  2. import  -- const mongoose = require('mongoose)
+  3 .connect mongoose --     const db = await mongoose.connect(url);
+
+schema - define structure
+scmeha -- model 
+using model we do crud operations 
+
+model -- 
+
+const mongoose = require("mongoose");
+
+const userSchema = new mongoose.Schema({ 
+  full_name: { type: String },
+  email: { type: String, unique: true, required: true },
+  mobile_number: { type: String, unique: true, required: true },
+  password: { type: String },
+  aadhar_number: { type: Number, unique: true },
+  aadhar_key_status: { type: Boolean, default: false },
+  address: {
+    address_line_1: { type: String },
+  },
+  isActive: { type: String, enum: ["Active", "InActive"] },
+});
+
+module.exports = mongoose.model("user", userSchema);
+
+
+other file there we use model -- first import  
+const  usermodel = require(./model/user)
+
 
 
 

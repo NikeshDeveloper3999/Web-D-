@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 //  new mongoose.Schema constructor banata ha 
 
 
-const userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({ 
   full_name: { type: String },
   email: { type: String, unique: true, required: true },
   mobile_number: { type: String, unique: true, required: true },
