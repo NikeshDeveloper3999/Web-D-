@@ -4,8 +4,9 @@ const router = express.Router()
 
 const urlController = require('../Controller/UrlController')
 
-router.post('/' , urlController.handleGenerateUrl)
+router.post('/', urlController.handleGenerateUrl)
 router.get('/:shortId',urlController.geturl)
-router.get('/analytics/:shortId',urlController.handleGetAAnalytics)
+router.get('/analytics/:shortId',urlController.handleGetAnalytics )
  
+
 module.exports = router 

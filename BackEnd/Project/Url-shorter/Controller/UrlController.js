@@ -16,8 +16,6 @@ return res.json({id : shortID})
 
 }
 
-
-
 async function geturl (req, res){
 try{
 const shortUrl = await url.findOneAndUpdate(
@@ -44,17 +42,17 @@ catch(err) {
 }
 }
 
-async function handleGetAAnalytics(req, res) {
 
-const shortId = req.params.shortId;
-const entry = await url.findOne({ ShortId: shortId });
-return res.json(  
-    {
-        totalclick: entry.visithistory.length,
-        analytics : entry.visithistory 
-    }
-);}
+// ejs rendering 
+async function handleGetAnalytics(req, res) {
+    const shortId = req.params.shortId;
+    const entry = await url.findOne({ ShortId: shortId });
 
+    return res.render("analytics", {
+        totalClick: entry.visithistory.length,
+        analytics: entry.visithistory
+    });
+}
 
-
-module.exports = { handleGenerateUrl , geturl  , handleGetAAnalytics}
+ 
+module.exports = {handleGenerateUrl , geturl, handleGetAnalytics }
