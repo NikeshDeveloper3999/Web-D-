@@ -181,9 +181,6 @@ use <db_name>  -- use specific DB
 
 
 
-
-
-
 --- use mongoose  ---
   1. install  -- npm i mongoose
   2. import  -- const mongoose = require('mongoose)
@@ -218,6 +215,28 @@ const  usermodel = require(./model/user)
 
 
 
+<---- Server side rendering with nodejs  --- > 
+
+Server-Side Rendering (SSR) is a rendering technique where the server generates the HTML for a page on each request and sends it to the browser. This allows users to see content immediately and improves SEO. After the HTML is loaded, JavaScript hydrates the page to make it fully interactive. Frameworks like Next.js implement SSR for React applications.
+
+use -- ejs  -- npm i ejs 
+const path - require('path')
+app.set('view engine' , 'ejs');
+app.set('views' , path.resolve('./views'));  -- ./viewa directory  
+
+
+
+<<------Authentication  ---- >>> 
+
+authentication patterns 
+
+1. stateFull  --- Which maintains state or data or server side 
+2 . stateless   ---  which has no state 
+
+express flow   in authentication 
+client --> Auth Middleware  ---> Endpoint route  
+
+
 
 
 
@@ -233,8 +252,6 @@ const  usermodel = require(./model/user)
 Package.json file pura ka pura version control karega 
 Nodemulde 
 
-
-
 Step 1 - Create first server.js file 
 Step2 - npm init -y 
 Step 3 - npm i express 
@@ -243,15 +260,12 @@ Step 5 - npm i mongoose
 Step 6-  npm i dotenv 
 
 
-
-
 In server.js file 
 Const express = require(‘express’)
 Const app =express();
 app.listen(3000,()=>{
 console.log(“ server is running in port 3000” );
 })
-
 
 callback function ko call karne  ke liye () parentheses  ki jarurat nahi hoti 
 
@@ -263,8 +277,6 @@ types of routes
 public routes  
 private routes 
 protected routes 
-
-
 aggregate 
 
 
