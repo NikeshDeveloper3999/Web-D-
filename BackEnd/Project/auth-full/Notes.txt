@@ -1,0 +1,14 @@
+overall flow of this page 
+
+create user accont 
+mongoose  
+schema 
+model 
+usercreate  -- password hash 
+jwt token - set token on cookie 
+
+login -- > token -- decrypt  -- email
+
+
+
+
