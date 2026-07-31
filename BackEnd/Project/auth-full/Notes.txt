@@ -10,5 +10,36 @@ jwt token - set token on cookie
 login -- > token -- decrypt  -- email
 
 
+हम JWT Token को LocalStorage की बजाय Cookies (विशेषकर HttpOnly Cookies) में स्टोर करते हैं,
+क्योंकि LocalStorage को Client-side JavaScript आसानी से Access कर सकती है। अगर वेबसाइट पर XSS (Cross-Site Scripting) Attack हो जाए, तो Attacker LocalStorage से Token चुरा सकता है।
+लेकिन HttpOnly Cookie को JavaScript Access नहीं कर सकती, इसलिए Token अधिक सुरक्षित रहता है।
 
 
+LocalStorage में Token रखना सुरक्षित नहीं माना जाता क्योंकि उसे JavaScript Access कर सकती है।
+HttpOnly Cookie JavaScript से सुरक्षित होती है, लेकिन Browser उसे हर Request के साथ भेजता है, 
+इसलिए CSRF Protection की जरूरत होती है। Modern Applications अक्सर Access Token को Memory में और Refresh Token को HttpOnly Cookie में Store करती हैं। इससे Security और User Experience दोनों बेहतर रहते हैं।
+
+Best Practice
+Access Token → Memory (React state, Redux, Context, etc.)
+Refresh Token → HttpOnly + Secure + SameSite Cookie
+
+We use two tokens: Access Token and Refresh Token. The Access Token is used to authenticate every request 
+sent to the server and is usually stored in memory because it is short-lived. The Refresh Token is stored in an HttpOnly, Secure Cookie. When the Access Token expires or is removed after a browser refresh, the Refresh Token is used to generate a new Access Token, so the user does not have to log in again.
+
+access token maximum  expires time  is 15 minutes  
+refresh token time is 1d 7d 30d according yo developer 
+
+
+
+final flow  -- 
+JWT Authentication में हम आमतौर पर दो Token का उपयोग करते हैं: Access Token और Refresh Token।
+
+Access Token को हम अक्सर Memory (RAM) में Store करते हैं, क्योंकि Memory को JavaScript के अलावा कोई सीधे Access नहीं कर सकता और Browser Refresh या Close होने पर यह अपने आप Delete हो जाता है। इससे Security बढ़ जाती है।
+
+लेकिन एक समस्या है कि Browser Refresh होने पर Memory खाली हो जाती है, इसलिए User बार-बार Login न करे, इसके लिए हम Refresh Token का उपयोग करते हैं।
+
+Refresh Token को HttpOnly, Secure Cookie में Store किया जाता है। HttpOnly Cookie को JavaScript Access नहीं कर सकती, इसलिए यह LocalStorage से अधिक Secure होती है।
+
+जब Access Token Expire हो जाता है या Browser Refresh होने के कारण Memory से हट जाता है, तो Browser HttpOnly Cookie में मौजूद Refresh Token को Server के पास भेजता है। Server Refresh Token को Verify करता है और यदि वह Valid होता है, तो एक नया Access Token Generate करके वापस भेज देता है। इसके बाद User बिना दोबारा Login किए Application का उपयोग कर सकता है।
+
+इसी कारण Modern Applications में Access Token को Memory में और Refresh Token को HttpOnly Cookie में Store करना सबसे अच्छा Practice माना जाता है।
