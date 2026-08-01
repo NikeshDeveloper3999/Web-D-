@@ -43,3 +43,22 @@ Refresh Token को HttpOnly, Secure Cookie में Store किया जा
 जब Access Token Expire हो जाता है या Browser Refresh होने के कारण Memory से हट जाता है, तो Browser HttpOnly Cookie में मौजूद Refresh Token को Server के पास भेजता है। Server Refresh Token को Verify करता है और यदि वह Valid होता है, तो एक नया Access Token Generate करके वापस भेज देता है। इसके बाद User बिना दोबारा Login किए Application का उपयोग कर सकता है।
 
 इसी कारण Modern Applications में Access Token को Memory में और Refresh Token को HttpOnly Cookie में Store करना सबसे अच्छा Practice माना जाता है।
+
+
+
+Correct Authentication Flow
+User registers → Password is hashed and the user is saved in the database.
+User logs in → The server verifies the email and password.
+If the credentials are correct:
+Generate an Access Token (short expiry, e.g., 15 minutes).
+Generate a Refresh Token (long expiry, e.g., 7 days).
+Store the Refresh Token in an HttpOnly, Secure Cookie.
+Send the Access Token to the client (or store it in memory).
+The client uses the Access Token to make API requests.
+When the Access Token expires:
+The browser automatically sends the Refresh Token to the server.
+The server verifies the Refresh Token.
+If it is valid:
+Generate a new Access Token.
+If using refresh token rotation, also generate a new Refresh Token and invalidate the old one.
+If the Refresh Token has expired or is invalid, the user must log in again.

@@ -38,7 +38,7 @@ app.get("/", (req, res) => {
     res.render("index");
 });
 
-app.use("/auth", userRoute);
+app.use("/api/auth", userRoute);
 
 // Server
 app.listen(PORT, () => {
