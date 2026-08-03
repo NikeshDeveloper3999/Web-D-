@@ -12,6 +12,10 @@ const {
     validateForgotPassword, validateResetPassword
 } = require('../Middleware/Validate')
 
+
+
+
+
 router.post('/signup', signupLimiter, validateSignup, Signup)
 router.post('/login', loginLimiter, validateLogin, login)
 router.post('/verify-email', otpLimiter, validateOtp, verifyemail)
