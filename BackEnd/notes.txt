@@ -236,11 +236,100 @@ authentication patterns
 express flow   in authentication 
 client --> Auth Middleware  ---> Endpoint route  
 
+< ----   authentication ----- > 
+
+
+// how to set cookie  and  get  cookie  ✅
+when we need to fetch and set cookie so first download cookieparser  and import and use 
+
+const cookieParser = require('cookie-parser')
+app.use(cookieParser())
+
+
+app.get('/', (req , res)=>{
+    res.cookie('name',"harsh");   // set cookies  means -- server se browser par kuch data store karwa dena  
+    return res.send('done' )
+}) 
+ 
+
+app.get('/read', (req , res)=>{
+     console.log(req.cookies);   // get cookies  means -- browser se server par kuch data fetch karna
+    return res.send('done' )
+}) 
+
+ 
+ 
+// how to use bcrypt  and use forward encrytption and decryption  ✅
+ 
+step 1  -- first download and require 
+step 2 - create salt and hash(provide and number )
+step3  -- add salt and hash   and store in db 
+
+const saltRounds = 10;
+const myPlaintextPassword = password; // original psw 
+
+bcrypt.hash(myPlaintextPassword, saltRounds).then( async function(hash) { 
+  await User.create({ name,email,password: hash,}); // store in db 
+});
+
+
+
+decryption  password // 
+
+  const isMatch = await bcrypt.compare(password, user.password);  // compare org psw with data psw hash psw 
+
+  if (!isMatch) {
+    return res.render("login", {
+      error: "Invalid credentials",
+    });
+  }
+
+
+// what is jwt and how to store data in jwt and catch data in jwt  📍
+
+JWT (JSON Web Token) is a secure way to identify a logged-in user without storing their login information on the server. It is the most common authentication method used in modern Node.js, React, and MERN applications.
+
+var jwt = require('jsonwebtoken');   
+
+var token = jwt.sign({ email: 'nikesh@gmail.com' },  secretkey);    // set token 
+
+const data = jwt.verify(req.cookies.token, secretkey);   // decrypt token  
+
+
+
+ < ----- Basic structure  of jwt bcrypt  and cookie   ✅   ---- > 
+
+ const express = require('express')
+const app = express(); 
+const cookieParser = require('cookie-parser')
+const jwt = require('jsonwebtoken') 
+
+app.use(cookieParser())
+
+const secretkey = 'nikeshDev'
+app.get('/', (req , res)=>{
+    var token = jwt.sign({ name: "harsh" }, secretkey);
+
+    res.cookie('token', token);   // set cookies  means -- server se browser par kuch data store karwa dena  
+
+    return res.send('done' )
+}) 
+
+
+app.get('/read', (req , res)=>{
+     console.log(req.cookies);   // get cookies  means -- browser se server par kuch data fetch karna
+     
+     const data = jwt.verify(req.cookies.token, secretkey);   // decrypt token 
+    return res.send('done' )
+}) 
+
+
+app.listen( 8000 , ()=>{ console.log( "server startes on port 8000 ")})
 
 
 
 
-
+< ----- complete authentication and Authorization ---- > ❗❗
 
 
 
