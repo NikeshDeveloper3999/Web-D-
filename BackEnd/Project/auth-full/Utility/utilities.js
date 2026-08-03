@@ -92,4 +92,4 @@ Need help? Contact our support team.
 }
 
 
-module.exports = { generatedOtp, getotphtml };
+module.exports = {generatedOtp , getotphtml};

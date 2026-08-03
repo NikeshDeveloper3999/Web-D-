@@ -1,27 +1,25 @@
-
-const express = require('express') 
+const express = require('express')
 const router = express.Router()
 
-const authController = require('../controller/authController')
+const {
+    Signup, GetMe, refreshToken, login, logout, logoutAll, verifyemail,
+    forgotPassword, resetPassword
+} = require('../controller/authController')
+const {loginLimiter, signupLimiter, otpLimiter, refreshLimiter,forgotPasswordLimiter, resetPasswordLimiter} = require('../Middleware/Ratelimiter')
 
-// POST   /api/auth/signup  - Register a new user
-router.post('/signup',authController.Signup)
+const {
+    validateSignup, validateLogin, validateOtp,
+    validateForgotPassword, validateResetPassword
+} = require('../Middleware/Validate')
 
-// Get   /auth/getme
-router.get('/getme',authController.GetMe )
-
-// get  /auth/refresh-token
-router.get('/refresh-token',authController.refreshToken )
-
-// get  /auth/logout
-router.get('/logout',authController.logout )
-
-// POST   /auth/login  - Login a user
-router.post('/login',authController.login)
-
-// POST   /auth/logout-all  - Logout a user all devices 
-router.post('/logout-all',authController.logoutAll)
-
-
+router.post('/signup', signupLimiter, validateSignup, Signup)
+router.post('/login', loginLimiter, validateLogin, login)
+router.post('/verify-email', otpLimiter, validateOtp, verifyemail)
+router.post('/forgot-password', forgotPasswordLimiter, validateForgotPassword, forgotPassword)
+router.post('/reset-password', resetPasswordLimiter, validateResetPassword, resetPassword)
+router.post('/refresh', refreshLimiter, refreshToken)
+router.post('/logout', logout)
+router.post('/logout-all', logoutAll)
+router.get('/me', GetMe)
 
 module.exports = router
