@@ -1,0 +1,224 @@
+Full-Stack Developer Mock Interview — Session 1
+1. HR — Tell me about yourself.
+
+Answer:
+
+My name is Nikesh Parte. I recently completed my Master's degree in Computer Science from MCU Bhopal. I also completed a Full Stack Java and DSA course from Coding Thinker, Bhopal.
+
+I have built more than five projects, including a Topmate clone, Tlux AI, and a full-stack e-commerce application. My main technical skills include React.js, JavaScript, Node.js, Express.js, MongoDB, and REST APIs.
+
+I have also worked with technologies such as Razorpay, Firebase Authentication, and the Google Gemini API. I have experience deploying applications using platforms like Vercel and Render.
+
+I am now looking for a full-stack software development opportunity where I can apply my skills, learn from experienced developers, and contribute to real-world projects.
+
+React.js — Beginner
+2. What is the difference between functional components and class components?
+
+Answer:
+
+Functional components are JavaScript functions that return JSX and are the modern and preferred way to create React components. We can use hooks such as useState and useEffect inside functional components.
+
+Class components use the JavaScript class syntax and traditionally use this.state and lifecycle methods. They were commonly used in older React applications.
+
+Today, functional components with hooks are generally preferred because they are simpler and easier to maintain.
+
+3. What is the difference between state and props?
+
+Answer:
+
+State is data that is managed inside a component. We can update state using functions such as the setter returned by useState, and when the state changes, React can re-render the component.
+
+Props are values passed from a parent component to a child component. Props are read-only for the child component.
+
+For example, a parent can pass a user's name to a child component using props, and the child can display that name.
+
+4. Why do we use useState?
+
+Answer:
+
+We use useState to manage state inside a functional component. It returns two things: the current state value and a setter function.
+
+When we call the setter function, React updates the state and re-renders the component so the UI can display the updated data.
+
+Example:
+
+const [count, setCount] = useState(0);
+
+
+setCount(count + 1);
+5. What happens when you call the state setter function?
+
+Answer:
+
+When we call the state setter function, React schedules a state update. After the state is updated, React re-renders the component and updates the UI where necessary.
+
+6. Can a child component change props?
+
+Answer:
+
+No. Props are read-only from the child's perspective. The parent component owns the data and passes it to the child.
+
+If the child needs to request a change, the parent can pass a callback function as a prop. The child can call that function, and the parent can update its own state.
+
+React.js — Intermediate
+7. What is useEffect and why do we use it?
+
+Answer:
+
+useEffect is a React hook used to perform side effects in a functional component.
+
+Common examples include fetching data from an API, setting up subscriptions, adding event listeners, or updating something outside the React component.
+
+It runs after the component renders, depending on its dependency array.
+
+8. What happens with an empty dependency array?
+
+Answer:
+
+useEffect(() => {
+  // code
+}, []);
+
+With an empty dependency array, the effect runs after the initial render. It is commonly used for tasks such as fetching initial data.
+
+9. What happens when we provide a dependency?
+
+For example:
+
+useEffect(() => {
+  // code
+}, [count]);
+
+Answer:
+
+The effect runs after the initial render and runs again whenever the value of count changes.
+
+10. When would you use useEffect for data fetching?
+
+Answer:
+
+We can use useEffect to fetch data from a backend API when a component loads or when a particular dependency changes.
+
+For example, if I need to fetch products when a product page loads, I can call the API inside useEffect.
+
+11. How do you optimize re-renders in React?
+
+Answer:
+
+We can optimize unnecessary re-renders by using techniques such as React.memo, useMemo, and useCallback.
+
+We should also structure components properly and avoid unnecessary state updates.
+
+useMemo can help avoid expensive recalculations, while useCallback can help maintain the same function reference when passing callbacks to child components.
+
+Important correction from our practice:
+
+useEffect is not a re-render optimization tool. It is mainly used for side effects.
+
+12. What is re-rendering in React?
+
+Answer:
+
+Re-rendering means React runs a component again to determine what the updated UI should look like.
+
+It can happen when the component's state changes or when its props change.
+
+13. Does useEffect optimize re-renders?
+
+Answer:
+
+No. useEffect is not specifically used to optimize re-renders. It is used to handle side effects.
+
+For optimizing unnecessary renders, we can use React.memo, useMemo, useCallback, and proper component structure.
+
+14. What is the difference between rendering and re-rendering?
+
+Answer:
+
+Rendering is when React creates the UI for a component for the first time.
+
+Re-rendering happens when something changes, such as state or props, and React runs the component again to determine what needs to be updated.
+
+Node.js & Express.js
+15. What is middleware in Express.js?
+
+Answer:
+
+Middleware is a function that runs between the incoming request and the final response.
+
+It can inspect or modify the request and response objects, perform authentication, validate data, log requests, or handle errors.
+
+After completing its work, middleware can call next() to pass control to the next middleware or route handler.
+
+16. How does middleware work in the request-response cycle?
+
+Answer:
+
+When a client sends a request, Express passes the request through the middleware functions.
+
+Middleware can check authentication, validate the request, or perform other processing. If everything is correct, it calls next(), and the request continues to the next middleware or route handler.
+
+If there is an error or the user is unauthorized, middleware can return an appropriate response instead.
+
+17. What middleware have you used?
+
+Based on the technologies you discussed, you can mention:
+
+I have worked with authentication middleware, JWT-based authentication, CORS-related configuration, and middleware for handling requests.
+
+I have also worked with libraries such as Multer for file uploads and Nodemailer for sending emails.
+
+Small correction: JWT itself isn't middleware. You can build authentication middleware using JWT.
+
+Topmate Clone — Project Questions
+18. How did you implement Razorpay integration?
+
+Answer:
+
+I integrated Razorpay for payment processing. The backend creates a Razorpay order, and the frontend uses the order details to open the Razorpay checkout.
+
+After the payment, I verify the payment signature on the backend. If the payment is successfully verified, I store the relevant payment information and update the payment status in the database.
+
+19. How did you implement the booking system?
+
+Answer:
+
+I created a booking model to store information about users, services, dates, times, and payment details.
+
+Before creating a booking, I check whether the selected time slot is available. If the slot is available, the user can proceed with the booking and payment.
+
+After successful payment verification, I confirm the booking and store the booking and payment information in the database.
+
+Your actual project also used a compound unique database index based on creator, date, and time to prevent double booking. That is a strong technical detail to mention in an interview.
+
+20. What happens after successful payment?
+
+Answer:
+
+After the payment is completed, I verify the payment on the backend. Once the payment is successfully verified, I update the booking status and store the payment information, such as the payment ID, in the database.
+
+Then the booking can be treated as confirmed.
+
+21. What payment data do you store?
+
+Answer:
+
+I store the relevant payment information, such as the payment ID and payment status, along with the booking information.
+
+22. How do you secure payment and booking APIs?
+
+Answer:
+
+I use authentication and authorization to protect the APIs. The server verifies the user's authentication before allowing access to protected resources.
+
+Sensitive credentials such as API keys and secret keys should be stored in environment variables rather than exposed in frontend code.
+
+For payments, verification should happen on the backend rather than trusting the frontend response.
+
+23. How do you ensure users can access only their own bookings?
+
+Answer:
+
+After authenticating the user, the backend identifies the current user and uses their user ID when querying bookings.
+
+The API should only return bookings belonging to that authenticated user. Admin users can have separate authorization rules to access broader platform data.

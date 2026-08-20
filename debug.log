@@ -1,1 +1,77 @@
-[0621/142129.953:ERROR:third_party\crashpad\crashpad\util\win\registration_protocol_win.cc:108] CreateFile: The system cannot find the file specified. (0x2)
+We've covered the basics. Your next interview level should be:
+
+React
+What is the Virtual DOM?
+What is reconciliation?
+What are controlled and uncontrolled components?
+What are keys in React?
+Why shouldn't we use array indexes as keys?
+What is prop drilling?
+What is Context API?
+Context API vs Redux?
+What is useCallback?
+What is useMemo?
+What is useRef?
+What are custom hooks?
+What is lazy loading?
+What is code splitting?
+JavaScript
+var, let, and const
+Closures
+Hoisting
+Promises
+async/await
+Event loop
+Callback queue
+Microtask vs macrotask
+Debouncing vs throttling
+map, filter, and reduce
+Shallow copy vs deep copy
+== vs ===
+Node.js / Express
+What is Node.js?
+Why is Node.js non-blocking?
+Event loop in Node.js
+What is Express?
+Routing
+Error-handling middleware
+JWT authentication
+Cookies vs localStorage
+CORS
+Rate limiting
+Authentication vs authorization
+MongoDB
+SQL vs MongoDB
+Collection vs document
+Embedding vs referencing
+Indexes
+Aggregation
+populate()
+Transactions
+How to optimize a MongoDB query
+Your Projects
+Explain Tlux AI architecture.
+Why did you use Gemini?
+How does your voice navigation work?
+Why did you use Vanilla JS for the embedded widget?
+How does your authentication work?
+How did you deploy the application?
+How did you handle CORS?
+Explain your Topmate booking architecture.
+How did you prevent double booking?
+How does Razorpay payment verification work?
+How did you integrate Zoom?
+How did you design the admin panel?
+DSA / Coding
+Arrays
+Strings
+HashMap
+Stack
+Queue
+Linked List
+Binary Search
+Recursion
+Sorting
+Trees
+Basic dynamic programming
+Time and space complexity
