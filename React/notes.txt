@@ -1,0 +1,40 @@
+"When a parent component re-renders, its child components are also re-rendered by default, unless techniques like React.memo prevent an unnecessary child re-render."
+State ya props change hone par React component ko re-render karta hai. Re-render ke time component function dobara execute hota hai, aur React new Virtual DOM representation ko previous representation se compare karke required DOM updates karta hai.
+
+ract.memo// child components ko rendered karne se rukta he agar props pass kiye or props change nahi hua he tab bhi rerender nahi karta he 
+
+how to use react.Memo 
+jo bhi child component/function  banaya he usko useMemo ke callback function me wrap kar do 
+
+ before react.memo --
+
+function Sumfunc(){
+return (
+<div>
+<h1 > THis is our Math Libraray </h1>
+<h2>  Sum :1000</h2>
+</div>
+)
+}
+
+export default Sumfunc ; 
+
+
+
+after implement react.memo  -
+import React  from "react";
+import { useMemo  } from "react";
+
+const  Sumfunc = React.memo(()=> {
+
+return (
+<div>
+<h1 > THis is our Math Libraray </h1>
+<h2>  Sum : 1000</h2>
+</div>
+)
+
+
+}
+)
+export default Sumfunc ; 
